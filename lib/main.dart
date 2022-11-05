@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:layouts/column/boxes.dart';
 
+void main() {
+  runApp(const MyApp());
+}
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -10,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal
       ),
-      home: Container(),
+      home: ColumnBoxes(),
     );
   }
 }
