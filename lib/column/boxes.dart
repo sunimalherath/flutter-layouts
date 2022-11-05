@@ -10,31 +10,28 @@ class ColumnBoxes extends StatelessWidget {
         title: const Text('Column Layout'),
         elevation: 10.0,
       ),
-      body: _buildBoxes(),
+      body: _buildLayout(),
     );
   }
 
-  Widget _buildBoxes() {
+  Widget _buildLayout() {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Container(
-            color: Colors.amber,
-            child: const SizedBox(
-              height: 100.0,
-            ),
-          ),
+          _buildBoxes(Colors.amber),
           const SizedBox(height: 8.0),
-          Container(
-            color: Colors.blue,
-            child: const SizedBox(
-              height: 100.0,
-            ),
-          ),
+          _buildBoxes(Colors.lightBlue)
         ],
       ),
+    );
+  }
+
+  Widget _buildBoxes(MaterialColor c) {
+    return Container(
+      color: c,
+      child: const SizedBox(height: 100.0,),
     );
   }
 }
